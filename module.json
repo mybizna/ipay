@@ -1,0 +1,13 @@
+{
+    "name": "Ipay",
+    "alias": "Ipay",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
