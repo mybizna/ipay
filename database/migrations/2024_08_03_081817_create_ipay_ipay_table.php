@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('p2')->nullable();
             $table->string('p3')->nullable();
             $table->string('p4')->nullable();
-            $table->foreignId('payment_id')->nullable();
+            $table->foreignId('payment_id')->constrained('account_payment')->onDelete('cascade')->nullable()->index('payment_id');
             $table->boolean('is_processed')->nullable();
 
             $table->timestamps();
