@@ -3,13 +3,13 @@
 namespace Modules\Ipay\Classes;
 
 use App\Classes\PaymentProcessor;
-use Modules\Ipay\Entities\IpayPayment;
-use Modules\Payment\Entities\Payment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Modules\Ipay\Models\IpayPayment;
+use Modules\Payment\Models\Payment;
 
 class IpayPaymentProcessor
 {

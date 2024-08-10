@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\Ipay\Entities;
+namespace Modules\Ipay\Models;
 
-use Modules\Base\Entities\BaseModel;
+use Modules\Base\Models\BaseModel;
 
 class Ipay extends BaseModel
 {
