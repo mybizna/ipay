@@ -6,6 +6,7 @@ use Modules\Base\Models\BaseModel;
 
 class Ipay extends BaseModel
 {
+
     /**
      * The fields that can be filled
      *
@@ -19,5 +20,4 @@ class Ipay extends BaseModel
      * @var string
      */
     protected $table = "Ipay";
-
 }
