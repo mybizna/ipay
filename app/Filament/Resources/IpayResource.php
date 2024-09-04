@@ -2,20 +2,22 @@
 
 namespace Modules\Ipay\Filament\Resources;
 
-use Modules\Ipay\Filament\Resources\IpayResource\Pages;
-use Modules\Ipay\Filament\Resources\IpayResource\RelationManagers;
-use Modules\Ipay\Models\Ipay;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Modules\Ipay\Filament\Resources\IpayResource\Pages;
+use Modules\Ipay\Models\Ipay;
 
 class IpayResource extends Resource
 {
     protected static ?string $model = Ipay::class;
+
+    protected static ?string $slug = 'ipay/ipay';
+
+    protected static ?string $navigationGroup = 'Gateway';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

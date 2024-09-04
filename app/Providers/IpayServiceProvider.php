@@ -9,7 +9,7 @@ class IpayServiceProvider extends ServiceProvider
 {
     protected string $moduleName = 'Ipay';
 
-    protected string $moduleNameLower = 'Ipay';
+    protected string $moduleNameLower = 'ipay';
 
     /**
      * Boot the application events.
