@@ -19,5 +19,5 @@ class Ipay extends BaseModel
      *
      * @var string
      */
-    protected $table = "Ipay";
+    protected $table = "ipay_ipay";
 }
