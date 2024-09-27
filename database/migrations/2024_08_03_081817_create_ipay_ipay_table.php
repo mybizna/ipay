@@ -32,10 +32,15 @@ return new class extends Migration
             $table->string('p2')->nullable();
             $table->string('p3')->nullable();
             $table->string('p4')->nullable();
-            $table->foreignId('payment_id')->constrained('account_payment')->onDelete('cascade')->nullable()->index('ipay_ipay_payment_id');
+            $table->foreignId('payment_id')->nullable()->constrained('account_payment')->onDelete('set null');
             $table->boolean('is_processed')->nullable();
 
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('deleted_by')->nullable()->constrained('users')->onDelete('set null');
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
