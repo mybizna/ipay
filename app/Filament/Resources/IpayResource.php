@@ -3,15 +3,12 @@
 namespace Modules\Ipay\Filament\Resources;
 
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Modules\Ipay\Filament\Resources\IpayResource\Pages;
+use Modules\Base\Filament\Resources\BaseResource;
 use Modules\Ipay\Models\Ipay;
 
-class IpayResource extends Resource
+class IpayResource extends BaseResource
 {
     protected static ?string $model = Ipay::class;
 
@@ -50,27 +47,4 @@ class IpayResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListIpays::route('/'),
-            'create' => Pages\CreateIpay::route('/create'),
-            'edit' => Pages\EditIpay::route('/{record}/edit'),
-        ];
-    }
-
-    public static function getEloquentQuery(): Builder
-    {
-        return parent::getEloquentQuery()
-            ->withoutGlobalScopes([
-                SoftDeletingScope::class,
-            ]);
-    }
 }
