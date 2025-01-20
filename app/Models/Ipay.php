@@ -43,8 +43,13 @@ class Ipay extends BaseModel
         $table->string('p2')->nullable();
         $table->string('p3')->nullable();
         $table->string('p4')->nullable();
-        $table->foreignId('payment_id')->nullable()->constrained(table: 'account_payment')->onDelete('set null');
+       $table->unsignedBigInteger('payment_id')->nullable();
         $table->boolean('is_processed')->nullable();
 
+    }
+
+    public function post_migration(Blueprint $table): void
+    {
+        $table->foreign('payment_id')->references('id')->on('account_payment')->onDelete('set null');
     }
 }
