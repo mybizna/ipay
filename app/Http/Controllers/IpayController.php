@@ -1,4 +1,6 @@
 <?php
+namespace Modules\Ipay\Http\Controllers;
+
 use Modules\Coinpayment\Classes\IpaypaymentProcessor;
 use Modules\Core\Classes\DBManager;
 use Modules\Account\Classes\Payment;
@@ -7,8 +9,9 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
+use Modules\Base\Http\Controllers\BaseController;
 
-class IpayController extends Controller
+class IpayController extends BaseController
 {
     public function index(Request $request)
     {
@@ -66,7 +69,7 @@ class IpayController extends Controller
             'status' => 200,
             'message' => $message,
         ];
-        
+
         return JsonResponse::create($response);
     }
 }
